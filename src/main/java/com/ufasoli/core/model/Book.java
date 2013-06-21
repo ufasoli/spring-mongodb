@@ -19,6 +19,7 @@ public class Book implements Serializable{
     @Id
     protected String id;
 
+    @Indexed
     protected String title;
 
     @Indexed(sparse = true)
@@ -27,6 +28,8 @@ public class Book implements Serializable{
     protected Boolean series;
 
     protected Integer nbPages;
+
+    protected Integer seriesNumber;
 
     protected List<Book> books;
 
@@ -77,5 +80,13 @@ public class Book implements Serializable{
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public Integer getSeriesNumber() {
+        return seriesNumber;
+    }
+
+    public void setSeriesNumber(Integer seriesNumber) {
+        this.seriesNumber = seriesNumber;
     }
 }
